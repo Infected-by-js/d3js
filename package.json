@@ -1,21 +1,15 @@
 {
-  "name": "vitejs-vanilla-boilerplate",
-  "version": "1.0.0",
-  "description": "ViteJS boilerplate for Vanilla HTML, SCSS and Javascript",
-  "main": "index.html",
-  "author": "InfectebByJs",
-  "license": "MIT",
+  "name": "vite-vanilla-js-template",
+  "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview",
-    "clr": "rm -rf node_modules yarn.lock"
+    "serve": "vite preview"
   },
   "devDependencies": {
-    "sass": "^1.43.2",
-    "vite": "^2.6.7"
+    "eslint": "^7.22.0",
+    "htmlhint": "^0.14.2",
+    "vite": "^2.1.0"
   },
-  "dependencies": {
-    "middleware": "^1.0.0"
-  }
+  "license": "MIT"
 }
