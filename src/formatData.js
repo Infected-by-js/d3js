@@ -1,14 +1,19 @@
-export default (rootName, data) => {
-  const result = data.reduce((acc, item) => {
-    const category = item.category;
-    const newItem = acc[category] ? [...acc[category], item] : [item];
+export default (rootName, data, sortValue = "category") => {
+  const result = {};
 
-    return { ...acc, [category]: newItem };
-  }, {});
+  for (const item of data) {
+    const name = item[sortValue];
 
-  const prepared = Object.entries(result).map(([key, value]) => {
-    return { name: key, children: value };
-  });
+    if (!result[name]) {
+      result[name] = { name, children: [item] };
+    } else {
+      const newChildren = [...result[name].children, item];
 
-  return { name: rootName, children: prepared };
+      result[name] = { name, children: newChildren };
+    }
+  }
+
+  const children = Object.values(result);
+
+  return { name: rootName, children };
 };
